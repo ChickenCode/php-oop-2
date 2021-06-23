@@ -1,6 +1,5 @@
 <?php
 
-    include "creditCard\creditCard.php";
 
     class User {
         public $name;
@@ -8,6 +7,7 @@
         public $userName;
         public $age;
         public $email;
+        public $prime = false;
 
         function __construct($name, $lastName, $userName, $age, $email)  {
             $this->setName($name);

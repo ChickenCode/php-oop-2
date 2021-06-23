@@ -1,7 +1,9 @@
 <?php
-    require __DIR__ . "./product.php";
+    
 
     class Smartphone extends Product {
+
+        
         public $height;
         public $width;
         public $year;
@@ -13,35 +15,37 @@
             $this->setYear($year);
         }
 
-        public function setHeight($num) {
-            if (is_numeric($num)) {
-            $this->height = $num;
-            }
-        }
 
-        public function getHeight() {
-            return $this->height;
-        }
+        use Basics;
+        // public function setHeight($num) {
+        //     if (is_numeric($num)) {
+        //     $this->height = $num;
+        //     }
+        // }
 
-        public function setWidth($num) {
-            if (is_numeric($num)) {
-            $this->width = $num;
-            }
-        }
+        // public function getHeight() {
+        //     return $this->height;
+        // }
 
-        public function getWidth() {
-            return $this->width;
-        }
+        // public function setWidth($num) {
+        //     if (is_numeric($num)) {
+        //     $this->width = $num;
+        //     }
+        // }
 
-        public function setYear($num) {
-            if (is_numeric($num)) {
-            $this->year = $num;
-            }
-        }
+        // public function getWidth() {
+        //     return $this->width;
+        // }
 
-        public function getYear() {
-            return $this->year;
-        }
+        // public function setYear($num) {
+        //     if (is_numeric($num)) {
+        //     $this->year = $num;
+        //     }
+        // }
+
+        // public function getYear() {
+        //     return $this->year;
+        // }
 
 
 

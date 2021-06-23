@@ -57,7 +57,6 @@
 
         public function setExpDate($date) {
                 $this->expDate = $date;
-
                 $this->isValid($date);
         }
 

@@ -23,20 +23,16 @@
             return $this->price;
         }
 
-        public function setName($string) {
-            if (ctype_alpha($string)) {
-            $this->name = $string;
-            }
+        public function setName($string) {     
+            $this->name = $string;   
         }
 
         public function getName() {
             return $this->name;
         }
 
-        public function setBrand($string) {
-            if (ctype_alpha($string)) {
+        public function setBrand($string) {    
             $this->brand = $string;
-            }
         }
 
         public function getBrand() {
