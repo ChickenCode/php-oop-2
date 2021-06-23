@@ -8,50 +8,54 @@
         public $valid;
 
         function __construct($number, $cvv, $firstName, $lastName, $date) {
-            $this->getNumber($number);
-            $this->getCVV($cvv);
-            $this->getOwnerFirstName($firstName);
-            $this->getOwnerLastName($lastName);
+            $this->setNumber($number);
+            $this->setCVV($cvv);
+            $this->setOwnerFirstName($firstName);
+            $this->setOwnerLastName($lastName);
             $this->setExpDate($date);
         }
 
-        public function getNumber($num) {
+        public function setNumber($num) {
             if (ctype_digit($num) and strlen($num) == 16) {
                 $this->number = $num;
             }
+
+            else {
+                throw new Exception("Your credit card is not valid.");
+            }
         }
 
-        public function setNumber() {
+        public function getNumber() {
             return $this->number;
         }
 
-        public function getCVV($num) {
+        public function setCVV($num) {
             if (ctype_digit($num) and strlen($num) == 3) {
                 $this->cvv = $num;
             }
         }
 
-        public function setCVV() {
+        public function getCVV() {
             return $this->cvv;
         }
 
-        public function getOwnerFirstName($string) {
+        public function setOwnerFirstName($string) {
             if (ctype_alpha($string)) {
                 $this->ownerFirstName = $string;
             }
         }
 
-        public function setOwnerFirstName() {
+        public function getOwnerFirstName() {
             return $this->ownerFirstName;    
         }
 
-        public function getOwnerLastName($string) {
+        public function setOwnerLastName($string) {
             if (ctype_alpha($string)) {
                 $this->ownerLastName = $string;
             }
         }
 
-        public function setOwnerLastName() {
+        public function getOwnerLastName() {
             return $this->ownerLastName;    
         }
 
@@ -64,9 +68,9 @@
             return $this->expDate;
         }
 
-        public function isValid($expDate) {
-            if (strtotime($expDate) > strtotime(date('d/m/Y'))) {
-                $this->valid = true;
+        public function isValid() {
+            if (strtotime($this->expDate) > strtotime(date('d/m/Y'))) { 
+                $this->valid =  true;
             }
 
             else {

@@ -21,6 +21,10 @@
             if (ctype_alpha($string)) {
             $this->name = $string;
             }
+
+            else {
+                throw new Exception("Invalid name");
+            }
         }
 
         public function getName() {
@@ -30,6 +34,10 @@
         public function setLastName($string) {
             if (ctype_alpha($string)) {
             $this->lastName = $string;
+            }
+
+            else {
+                throw new Exception("Invalid last name");
             }
         }
 
